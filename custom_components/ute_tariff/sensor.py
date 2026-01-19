@@ -43,6 +43,7 @@ class UteSensorDescription:
     device_class: SensorDeviceClass | None
     state_class: SensorStateClass | None
     suggested_unit_of_measurement: str | None = None
+    has_entity_name: bool = True
 
 
 SENSORS: list[UteSensorDescription] = [
