@@ -1,0 +1,11 @@
+{
+  "domain": "ute_tariff",
+  "name": "UTE Tariff (Uruguay)",
+  "config_flow": true,
+  "documentation": "https://github.com/your-username/ute-tariff",
+  "issue_tracker": "https://github.com/your-username/ute-tariff/issues",
+  "version": "1.0.0",
+  "requirements": [],
+  "codeowners": ["@your-username"],
+  "iot_class": "local_polling"
+}

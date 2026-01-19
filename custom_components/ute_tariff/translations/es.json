@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tarifa UTE",
+        "description": "Configura la integracion de Tarifa UTE.",
+        "data": {
+          "energy_entity_id": "Sensor de energia",
+          "tariff": "Tarifa",
+          "mode": "Modo",
+          "timezone": "Zona horaria"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de Tarifa UTE",
+        "description": "Ajusta precios, ventana de punta y opciones de facturacion.",
+        "data": {
+          "tariff": "Tarifa",
+          "mode": "Modo",
+          "punta_window": "Ventana de punta",
+          "use_holidays": "Usar feriados",
+          "holidays_list": "Lista de feriados (YYYY-MM-DD separados por coma)",
+          "include_fixed_charge": "Incluir cargo fijo en modo tipo factura",
+          "include_power_charge": "Incluir cargo por potencia en modo tipo factura",
+          "contracted_power_kw": "Potencia contratada (kW)",
+          "include_vat": "Incluir IVA",
+          "vat_rate": "Tasa de IVA",
+          "apply_vat_to_fixed_charge": "Aplicar IVA a cargos fijos y potencia",
+          "price_table_override": "Reemplazo de tabla de precios (JSON)"
+        }
+      }
+    },
+    "error": {
+      "contracted_power_required": "La potencia contratada es requerida cuando el cargo por potencia esta activo.",
+      "invalid_json": "La tabla de precios debe ser un JSON valido."
+    }
+  }
+}

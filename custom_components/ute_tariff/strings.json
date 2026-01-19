@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "UTE Tariff",
+        "description": "Configure the UTE Tariff integration.",
+        "data": {
+          "energy_entity_id": "Energy sensor",
+          "tariff": "Tariff",
+          "mode": "Mode",
+          "timezone": "Timezone"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UTE Tariff Options",
+        "description": "Adjust pricing, punta window, and billing options.",
+        "data": {
+          "tariff": "Tariff",
+          "mode": "Mode",
+          "punta_window": "Punta window",
+          "use_holidays": "Use holidays",
+          "holidays_list": "Holidays list (comma-separated YYYY-MM-DD)",
+          "include_fixed_charge": "Include fixed charge in bill-like mode",
+          "include_power_charge": "Include power charge in bill-like mode",
+          "contracted_power_kw": "Contracted power (kW)",
+          "include_vat": "Include VAT",
+          "vat_rate": "VAT rate",
+          "apply_vat_to_fixed_charge": "Apply VAT to fixed and power charges",
+          "price_table_override": "Price table override (JSON)"
+        }
+      }
+    },
+    "error": {
+      "contracted_power_required": "Contracted power is required when power charge is enabled.",
+      "invalid_json": "Price table override must be valid JSON."
+    }
+  }
+}
