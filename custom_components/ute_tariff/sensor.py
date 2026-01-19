@@ -1,12 +1,12 @@
 """Sensors for UTE Tariff."""
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Any
 
 from homeassistant.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
+    SensorEntityDescription,
     SensorStateClass,
 )
 from homeassistant.config_entries import ConfigEntry
@@ -35,47 +35,36 @@ from .const import (
 from .coordinator import UteTariffCoordinator
 
 
-@dataclass
-class UteSensorDescription:
-    key: str
-    name: str
-    unit: str | None
-    device_class: SensorDeviceClass | None
-    state_class: SensorStateClass | None
-    suggested_unit_of_measurement: str | None = None
-    has_entity_name: bool = True
-
-
-SENSORS: list[UteSensorDescription] = [
-    UteSensorDescription(
+SENSORS: list[SensorEntityDescription] = [
+    SensorEntityDescription(
         key="price_kwh_now",
         name="UTE Tariff Price kWh Now",
         unit="UYU/kWh",
         device_class=None,
         state_class=SensorStateClass.MEASUREMENT,
     ),
-    UteSensorDescription(
+    SensorEntityDescription(
         key="cost_today",
         name="UTE Tariff Cost Today",
         unit="UYU",
         device_class=SensorDeviceClass.MONETARY,
         state_class=SensorStateClass.MEASUREMENT,
     ),
-    UteSensorDescription(
+    SensorEntityDescription(
         key="cost_month",
         name="UTE Tariff Cost Month",
         unit="UYU",
         device_class=SensorDeviceClass.MONETARY,
         state_class=SensorStateClass.MEASUREMENT,
     ),
-    UteSensorDescription(
+    SensorEntityDescription(
         key="kwh_today",
         name="UTE Tariff kWh Today",
         unit="kWh",
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.MEASUREMENT,
     ),
-    UteSensorDescription(
+    SensorEntityDescription(
         key="kwh_month",
         name="UTE Tariff kWh Month",
         unit="kWh",
@@ -103,7 +92,7 @@ class UteTariffSensor(CoordinatorEntity[UteTariffCoordinator], SensorEntity):
         self,
         coordinator: UteTariffCoordinator,
         entry: ConfigEntry,
-        description: UteSensorDescription,
+        description: SensorEntityDescription,
     ) -> None:
         super().__init__(coordinator)
         self.entity_description = description
