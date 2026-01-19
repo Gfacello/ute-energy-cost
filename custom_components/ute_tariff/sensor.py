@@ -42,6 +42,7 @@ class UteSensorDescription:
     unit: str | None
     device_class: SensorDeviceClass | None
     state_class: SensorStateClass | None
+    suggested_unit_of_measurement: str | None = None
 
 
 SENSORS: list[UteSensorDescription] = [
@@ -161,4 +162,3 @@ class UteTariffSensor(CoordinatorEntity[UteTariffCoordinator], SensorEntity):
     @property
     def _current_mode(self) -> str:
         return self._entry.options.get(CONF_MODE, self._entry.data.get(CONF_MODE))
-
